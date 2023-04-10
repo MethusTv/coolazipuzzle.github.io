@@ -367,9 +367,11 @@ button {
 
 .banner_text {
     width: 63%;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
     margin: 0 auto;
     font-size: 16px;
-    color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(2, 4, 92);
     text-align: center;
 }
 
