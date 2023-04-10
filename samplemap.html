@@ -17,37 +17,15 @@
             mapboxgl.accessToken = 'pk.eyJ1IjoibWV0aHVzb3JjYWphZGEiLCJhIjoiY2xnOHl1OHQ1MDF3YTNycWlmbDh2cGV0MyJ9.pK5-r9BfVCNuuu8-1pAjIA';
             const map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/outdoors-v12',
+                style: 'mapbox://styles/mapbox/streets-v11',
                 center: [122.06282, 11.42906],
-                zoom: 12
+                zoom: 10
             });
-
-            const marker1 = new mapboxgl.Marker()
-            .setLngLat([122.055083,11.426572])
-            .addTo(map);
-            marker1.getElement().addEventListener('click', function() {
-
-            // Create a new popup with an HTML element containing the image
-            const popup1 = new mapboxgl.Popup()
-            .setLngLat([122.055083,11.426572])
-            .setHTML('<div><img src="images/image-info/municipal.jpg" width="200"/><p>Culasi Municipal Hall</p></div>')
-            .addTo(map);
-            marker1.setPopup(popup1);
-
-            });
-
-
-
-
-            const marker2 = new mapboxgl.Marker()
-            .setLngLat([122.08103, 11.38912 ])
-            .addTo(map);
 
             map.addControl(
                 new MapboxDirections({
                     accessToken: mapboxgl.accessToken
                 }), 'top-left'
-            
             );
 
             map.addControl(new mapboxgl.NavigationControl()); 
