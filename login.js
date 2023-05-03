@@ -55,7 +55,7 @@ function register () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).set(user_data)
 
-    window.location.href = "homepage.html";
+    window.location.href = "https://methustv.github.io/coolazipuzzle.github.io/";
     // DOne
     alert('User Created!!')
   })
