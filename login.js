@@ -12,7 +12,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth()
-const database = firebase.database()
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app);
 
 // Set up our register function
 function register () {
