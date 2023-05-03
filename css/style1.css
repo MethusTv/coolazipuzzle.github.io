@@ -366,12 +366,11 @@ button {
 }
 
 .banner_text {
-    width: 63%;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    width: 80%;
     margin: 0 auto;
-    font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(2, 4, 92);
+    font-size: 20px;
+    font-family: "Gill Sans Extrabold", sans-serif;
+    color: #ffffff;
     text-align: center;
 }
 

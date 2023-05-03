@@ -3,6 +3,7 @@
         <title>Map of Culasi</title>
         <meta name="viewport" content="intial-scale=1,maximum-scale=1,user-scalable=no">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="web.css">
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
         <style>
             body { margin: 0; padding: 0; }
@@ -13,6 +14,10 @@
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
         <div id="map"></div>
+        <div class='geocoder'>
+            <label for='geocoder'>Search:</label>
+            <input id='geocoder' type='text' placeholder='Enter a location' />
+        </div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoibWV0aHVzb3JjYWphZGEiLCJhIjoiY2xnOHl1OHQ1MDF3YTNycWlmbDh2cGV0MyJ9.pK5-r9BfVCNuuu8-1pAjIA';
             const map = new mapboxgl.Map({
@@ -26,31 +31,43 @@
             .setLngLat([122.055083,11.426572])
             .addTo(map);
             marker1.getElement().addEventListener('click', function() {
-
             // Create a new popup with an HTML element containing the image
             const popup1 = new mapboxgl.Popup()
             .setLngLat([122.055083,11.426572])
             .setHTML('<div><img src="images/image-info/municipal.jpg" width="200"/><p>Culasi Municipal Hall</p></div>')
             .addTo(map);
             marker1.setPopup(popup1);
-
             });
-
-
+            
 
 
             const marker2 = new mapboxgl.Marker()
             .setLngLat([122.08103, 11.38912 ])
             .addTo(map);
+            // Create a new popup with an HTML element containing the image
+            const popup2 = new mapboxgl.Popup()
+            .setLngLat([122.055083,11.426572])
+            .setHTML('<div><img src="images/image-info/municipal.jpg" width="200"/><p>Madja-as Park</p></div>')
+            .addTo(map);
+            marker2.setPopup(popup2);
+
+
 
             map.addControl(
                 new MapboxDirections({
                     accessToken: mapboxgl.accessToken
-                }), 'top-left'
+                }), 'top-right'
             
             );
 
             map.addControl(new mapboxgl.NavigationControl()); 
+            var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: true
+        });
+        document.querySelector('.geocoder').appendChild(geocoder.onAdd(map));
+            
         </script>
 
     </body>
