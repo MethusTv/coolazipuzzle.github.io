@@ -55,6 +55,7 @@ function register () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).set(user_data)
 
+    window.location.href = "index.html";
     // DOne
     alert('User Created!!')
   })
@@ -96,6 +97,7 @@ function login () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).update(user_data)
 
+    window.location.href = "homepage.html";
     // DOne
     alert('User Logged In!!')
 
