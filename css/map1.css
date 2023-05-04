@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@
 }
 nav{
   position: fixed;
-  background: #1b1b1b;
+  background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
   width: 100%;
   padding: 10px 0;
   z-index: 12;
