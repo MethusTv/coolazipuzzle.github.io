@@ -1,19 +1,18 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyC8ROlx92Neu4cGyI5Ezh3xEZef9_09cU4",
-    authDomain: "coolazi-puzzle.firebaseapp.com",
-    databaseURL: "https://coolazi-puzzle-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "coolazi-puzzle",
-    storageBucket: "coolazi-puzzle.appspot.com",
-    messagingSenderId: "469473168053",
-    appId: "1:469473168053:web:310cfb5586d38606448cfc"
+  apiKey: "AIzaSyBJdcRPPluclsFGU47Qq6f5VYBmd4t8SBQ",
+  authDomain: "login-and-register-fbf1d.firebaseapp.com",
+  databaseURL: "https://login-and-register-fbf1d-default-rtdb.firebaseio.com",
+  projectId: "login-and-register-fbf1d",
+  storageBucket: "login-and-register-fbf1d.appspot.com",
+  messagingSenderId: "209147316507",
+  appId: "1:209147316507:web:0690ab1456bcca2f9f2bbe"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth()
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app);
+const database = firebase.database()
 
 // Set up our register function
 function register () {
@@ -56,7 +55,6 @@ function register () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).set(user_data)
 
-    window.location.href = "https://methustv.github.io/coolazipuzzle.github.io/";
     // DOne
     alert('User Created!!')
   })
@@ -98,7 +96,6 @@ function login () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).update(user_data)
 
-    window.location.href = "homepage.html";
     // DOne
     alert('User Logged In!!')
 
