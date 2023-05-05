@@ -4,13 +4,29 @@
         <meta name="viewport" content="intial-scale=1,maximum-scale=1,user-scalable=no">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="web.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@1,900&display=swap" rel="stylesheet">
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+
+    </head>
+    <body>
         <style>
             body { margin: 0; padding: 0; }
             #map { position: absolute; top: 0; bottom: 0; width: 100% }
+            #menu {
+                position: absolute;  
+                padding: 3px;
+                padding-right: 25px;
+                background-color: rgb(186, 250, 255);
+                border-left-style: solid;
+                opacity: 65%;
+                color: rgb(255, 8, 8);
+                font-family: 'Asap Condensed', sans-serif;
+                margin-left: 2%;
+            }
         </style>
-    </head>
-    <body>
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
         <div id="map"></div>
@@ -18,14 +34,43 @@
             <label for='geocoder'>Search:</label>
             <input id='geocoder' type='text' placeholder='Enter a location' />
         </div>
+        <div id="menu">
+            <input id="satellite-streets-v12" type="radio" name="rtoggle" value="satellite" checked="checked">
+            <!-- See a list of Mapbox-hosted public styles at -->
+            <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+
+            <label for="navigation-day-v1">Day Navigation</label>
+            <input id="light-v11" type="radio" name="rtoggle" value="light">
+            <label for="light-v11">Light</label>
+            <input id="satellite-streets-v12" type="radio" name="rtoggle" value="satellite-streets">
+            <label for="satellite-streets-v12">Satellite Streets</label>
+            <input id="dark-v11" type="radio" name="rtoggle" value="dark">
+            <label for="dark-v11">Dark</label>
+            <input id="streets-v12" type="radio" name="rtoggle" value="streets">
+            <label for="streets-v12">Streets</label>
+            <input id="outdoors-v12" type="radio" name="rtoggle" value="outdoors">
+            <label for="outdoors-v12">Outdoors</label>
+            <input id="navigation-night-v1" type="radio" name="rtoggle" value="navigation-night">
+            <label for="navigation-night-v1">Night Navigation</label>
+            </div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoibWV0aHVzb3JjYWphZGEiLCJhIjoiY2xnOHl1OHQ1MDF3YTNycWlmbDh2cGV0MyJ9.pK5-r9BfVCNuuu8-1pAjIA';
             const map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/outdoors-v12',
+                style: 'mapbox://styles/mapbox/navigation-day-v1',
                 center: [122.06282, 11.42906],
                 zoom: 12
             });
+
+            const layerList = document.getElementById('menu');
+            const inputs = layerList.getElementsByTagName('input');
+            
+                for (const input of inputs) {
+                input.onclick = (layer) => {
+                const layerId = layer.target.id;
+                map.setStyle('mapbox://styles/mapbox/' + layerId);
+                };
+                }
 
             const geolocate = new mapboxgl.GeolocateControl({
                 positionOptions: {
@@ -52,7 +97,7 @@
             marker2.getElement().addEventListener('click', function() {
             // Create a new popup with an HTML element containing the image
             const popup2 = new mapboxgl.Popup()
-            .setLngLat([122.055083,11.426572])
+            .setLngLat([122.08103, 11.38912])
             .setHTML('<div><img src="images/image-info/municipal.jpg" width="200"/><p>Madja-as Park</p></div>')
             .addTo(map);
             marker2.setPopup(popup2);
@@ -65,6 +110,7 @@
             );
 
             map.addControl(new mapboxgl.NavigationControl()); 
+
             map.addControl(new mapboxgl.AttributionControl({
             customAttribution: 'Design by Team GGK'
             }));

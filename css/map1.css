@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@1,900&display=swap');
 
 *{
   margin: 0;
@@ -14,7 +15,7 @@ nav{
   position: fixed;
   background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
   width: 100%;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 12;
 }
 nav .menu{
@@ -23,7 +24,7 @@ nav .menu{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 12px;
 }
 .menu .logo a{
     width: 80%;
@@ -54,6 +55,54 @@ nav .menu{
   background: #fff;
   color: black;
 }
+
+.p2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  margin-right: 30%;
+  margin-top: 1px;
+}
+
+.p1{
+  vertical-align: middle;
+  display: inline-block;
+  float: left;
+  clear: left;
+  padding-top: 2%;
+  margin-top: 5px;
+}
+
+h3{
+  text-align: bottom;
+  font-size: 8px;
+  color: #050113;
+}
+
+h2{
+  display: block;
+  margin-right: 85%;
+  width: 50%;
+  margin-top: 5px;
+  color: rgb(255, 255, 255);
+}
+
+h1{
+  width: 100%;
+  margin-top: 15px;
+  float: left;
+  font-size: 30px;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Asap Condensed', sans-serif;
+  background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #276ee0, #3A86FF);
+}
+
 .img{
   background: url('img3.jpg')no-repeat;
   width: 100%;
@@ -75,8 +124,9 @@ nav .menu{
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   text-align: center;
+  background: -webkit-linear-gradient(25deg, #FFBE0B, #3A86FF);
 }
 .center .title{
   color: #fff;
@@ -89,11 +139,9 @@ nav .menu{
   font-weight: 600;
 }
 
-iframe{
-    padding-top: 2%;
-}
 .center .btns{
   margin-top: 20px;
+
 }
 .center .btns button{
   height: 55px;
@@ -108,6 +156,8 @@ iframe{
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
+  
+
 }
 .center .btns button:first-child{
   color: #fff;
