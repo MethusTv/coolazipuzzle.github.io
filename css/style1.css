@@ -17,7 +17,7 @@ html, body{
   margin-left: 0%;
   text-align: center;
   display: block;
-  background-color: #0cdaff;
+  background-color: #9cc0f9;
   padding-left: 40%;
   border-color: #0cdaff;
   border-style: inset 5px;
@@ -26,7 +26,7 @@ html, body{
 .head_title{
     margin-top: 35px;
     text-align: center;
-    color: #02006b;
+    color: #eeb705;
     font-size: 45px;
     text-shadow:
         0 0 7px #fff,
@@ -37,7 +37,7 @@ html, body{
         0 0 92px #0fa,
         0 0 102px #0fa,
         0 0 151px #0fa;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Titan One', cursive;
 }
 
 .info_text{
