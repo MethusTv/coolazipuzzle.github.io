@@ -54,7 +54,7 @@ function register () {
     // Push to Firebase Database
     database_ref.child('users/' + user.uid).set(user_data)
 
-    window.location.href = "index.html";
+    window.location.href = "homepage.html";
     // DOne
     alert('User Created!!')
   })
